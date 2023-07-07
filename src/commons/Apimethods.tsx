@@ -36,7 +36,6 @@ function Apimethods(url: string) {
     }
   };
 
-  
   const getProductById = async (id: any) => {
     const config = {
       headers: {
@@ -60,8 +59,7 @@ function Apimethods(url: string) {
       setLoading(false);
     }
   };
-  
-  
+
   const registerClient = (email: any, client_name: any, direction: any, client_password: any)  => {
     const config = {
       headers: {
@@ -72,9 +70,9 @@ function Apimethods(url: string) {
 
     setLoading(true);
     axios.post(url, { client: { client_name, email, client_password, direction, status_client: 0 } }, config)
-  .then((response) => setData(response.data))
-  .catch((err) => setError(err))
-  .finally(() => setLoading(false));
+      .then((response) => setData(response.data))
+      .catch((err) => setError(err))
+      .finally(() => setLoading(false));
   };
 
   const validateEmail = (email: string) => {
@@ -82,7 +80,7 @@ function Apimethods(url: string) {
     return emailRegex.test(email);
   };
 
-  return { data, loading,getProductById, error, fetchData, login, registerClient, validateEmail };
+  return { data, loading, getProductById, error, fetchData, login, registerClient, validateEmail, addOrder };
 }
 
 export default Apimethods;

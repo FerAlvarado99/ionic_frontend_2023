@@ -13,6 +13,7 @@ import { IonReactRouter } from '@ionic/react-router';
 import { ellipse, rocketSharp, roseSharp, square, triangle } from 'ionicons/icons';
 import Tab1 from './pages/Tab1';
 import Tab2 from './pages/Tab2';
+import Tab3 from './pages/Tab3';
 import Login from './pages/Login';
 import Register from './pages/Register';
 
@@ -48,6 +49,7 @@ const App: React.FC = () => (
       <Route exact path="/login" component={Login} />
       <Route exact path="/register" component={Register} />
       <Route exact path="/DetalleProducto/:id" component={Tab2} />
+      <Route exact path="/tab3" component={Tab3} />
       <Route exact path="/productos" component={Tab1} />
         <Redirect exact from="/" to="/register" />
       </IonRouterOutlet>
