@@ -12,6 +12,7 @@ const RegisterClient: React.FC = () => {
   const [client_password, setPassword] = useState('');
   const [message, setMessage] = useState('');
   const { registerClient } = Apimethods(`${environment.apiEndpoint}/api/clients`);
+  const history2 = useHistory();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -23,6 +24,9 @@ const RegisterClient: React.FC = () => {
       setMessage('Error al registrar el cliente');
     }
   };
+  const handleLogin = () => {
+  history2.push(`/login`);
+  };
 
   return (
     <IonPage>
@@ -30,6 +34,9 @@ const RegisterClient: React.FC = () => {
         <div className="login-container" style={{ maxWidth: '400px', margin: '0 auto', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
           <h1 style={{ fontSize: '50px' }}>Registrarse</h1>
           <form onSubmit={handleSubmit} style={{ width: '100%' }}>
+            <IonButton a href='#' onClick={(e) => { e.preventDefault(); handleLogin() }} style={{ position: 'absolute', top: '10px', right: '10px' }}>
+              Ingresar
+            </IonButton>
             <IonItem lines="none">
               <IonLabel position="floating">Email</IonLabel>
               <IonInput type="email" value={email} onIonChange={(e) => setEmail(e.detail.value!)} required></IonInput>
