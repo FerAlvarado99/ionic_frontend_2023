@@ -1,0 +1,7 @@
+{
+  "name": "ionic_proyecto_2023",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react-vite"
+}

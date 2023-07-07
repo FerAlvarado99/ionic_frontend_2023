@@ -1,0 +1,13 @@
+.dish-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+  
+  .dish-container {
+    flex-basis: 200px;
+    flex-grow: 0;
+    flex-shrink: 0;
+    margin: 10px;
+  }
+  
