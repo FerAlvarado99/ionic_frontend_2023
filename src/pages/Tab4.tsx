@@ -55,8 +55,8 @@ const Tab4: React.FC = () => {
 
   if (data !== null) {
     const filteredData = data.filter((order: any) => {
-      const dishId = order.client_id;
-      const filterValue = 1; //clientID
+      const dishId = order.client.client_name;
+      const filterValue = "Jairo"; //clientID
     
       return dishId === filterValue;
     });
