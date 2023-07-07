@@ -28,7 +28,7 @@ function Apimethods(url: string) {
 
   const login = async (email: string, client_password: string) => {
     try {
-      const response = await axios.post(`${url}/api/sessions`, { email, client_password });
+      const response = await axios.post(`${url}/api/sessions_client`, { email, client_password });
       return response.data;
     } catch (error) {
       console.error('Error during login:', error);

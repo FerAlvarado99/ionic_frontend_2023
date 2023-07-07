@@ -29,6 +29,9 @@ const Login: React.FC = () => {
 
   return (
     <IonPage>
+      <IonButton a href='#' onClick={(e) => { e.preventDefault(); handleLogin() }} style={{ position: 'absolute', top: '10px', right: '10px' }}>
+        Ingresar
+      </IonButton>
       <IonContent>
       <div className="login-container" style={{ maxWidth: '400px', margin: '0 auto', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
           <h1 style={{fontSize: '50px'}}>Iniciar Sesión</h1>

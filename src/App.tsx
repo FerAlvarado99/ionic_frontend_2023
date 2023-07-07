@@ -13,6 +13,9 @@ import { IonReactRouter } from '@ionic/react-router';
 import { ellipse, rocketSharp, roseSharp, square, triangle } from 'ionicons/icons';
 import Tab1 from './pages/Tab1';
 import Tab2 from './pages/Tab2';
+import Tab3 from './pages/Tab3';
+import Tab4 from './pages/Tab4';
+import Tab5 from './pages/Tab5';
 import Login from './pages/Login';
 import Register from './pages/Register';
 
@@ -45,10 +48,14 @@ const App: React.FC = () => (
   <IonApp>
     <IonReactRouter>
       <IonRouterOutlet>
-      <Route exact path="/login" component={Login} />
-      <Route exact path="/register" component={Register} />
       <Route exact path="/DetalleProducto/:id" component={Tab2} />
       <Route exact path="/productos" component={Tab1} />
+      <Route exact path="/login" component={Login} />
+      <Route exact path="/register" component={Register} />
+      <Route exact path="/tab3/:name/:id" component={Tab3} />
+      <Route exact path="/tab4/" component={Tab4} />
+      <Route exact path="/tab5/:name/:id/:ordenID" component={Tab5} />
+
         <Redirect exact from="/" to="/register" />
       </IonRouterOutlet>
     </IonReactRouter>
