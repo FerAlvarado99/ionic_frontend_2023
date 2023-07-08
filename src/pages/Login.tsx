@@ -5,7 +5,7 @@ import { IonContent, IonInput, IonItem, IonLabel, IonPage, IonButton, IonText } 
 import { useHistory } from 'react-router';
 
 const Login: React.FC = () => {
-  const history = useHistory();
+  const history2 = useHistory();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [message, setMessage] = useState('');
@@ -18,7 +18,7 @@ const Login: React.FC = () => {
     try {
       const response = await login(email, password);
       setMessage('¡Inicio de sesión exitoso!'); // Mensaje de felicitación
-      history.push('/productos');
+      history2.push('/productos');
       // Aquí puedes realizar acciones adicionales, como redirigir a otra página, guardar el token de autenticación, etc.
     } catch (error) {
       console.error('Error during login:', error);
@@ -26,11 +26,13 @@ const Login: React.FC = () => {
     }
   };
   
-
+  const handleGoBack = () => {
+    history2.replace(`/Register`);
+  };
   return (
     <IonPage>
-      <IonButton a href='#' onClick={(e) => { e.preventDefault(); handleLogin() }} style={{ position: 'absolute', top: '10px', right: '10px' }}>
-        Ingresar
+      <IonButton a href='#' onClick={(e) => { e.preventDefault(); handleGoBack() }} style={{  top: '10px', right: '10px' }}>
+        Registrar
       </IonButton>
       <IonContent>
       <div className="login-container" style={{ maxWidth: '400px', margin: '0 auto', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>

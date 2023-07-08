@@ -27,7 +27,9 @@ const RegisterClient: React.FC = () => {
   const handleLogin = () => {
   history2.push(`/login`);
   };
-
+  const handleGoBack = () => {
+    history.back();
+  };
   return (
     <IonPage>
       <IonContent>
