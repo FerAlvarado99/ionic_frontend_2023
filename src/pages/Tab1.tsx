@@ -38,6 +38,9 @@ const Tab1: React.FC = () => {
     const handleLogin = () => {
       history.replace(`/login`);
     };
+    const handleChangeDataUser = () => {
+      history.push(`/changeDataUser`);
+    };
 
   return (
     
@@ -47,6 +50,11 @@ const Tab1: React.FC = () => {
         Cerrar sesion
       </IonButton>
 
+      <IonButton a href='#' onClick={(e) => { e.preventDefault(); handleChangeDataUser() }} 
+      style={{ top: '10px', right: '10px',  maxWidth: '400px' }}>
+        Cambiar datos de usuario
+      </IonButton>
+      
       <IonButton
       className='add-to-cart-button'
       onClick={handlegoShoppingCar}
